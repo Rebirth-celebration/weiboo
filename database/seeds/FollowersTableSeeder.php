@@ -15,6 +15,7 @@ class FollowersTableSeeder extends Seeder
         $users = User::all();
         $user = $users->first();
         $user_id = $user->id;
+
         //获取去除掉 ID 为 1 的所有用户 ID 数组
         $followers = $users->slice(1);
         $follower_ids = $followers->pluck('id')->toArray();
